@@ -16,39 +16,45 @@ public class MainActivity extends AppCompatActivity {
     Game game;
     Boolean gameOver = false;
 
+    /**
+     * This function saves the board's tiles and reloads them when the screen rotates ( by using
+     * Serializable).
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         game = new Game();
+
+        if (savedInstanceState != null) {
+
+            game = (Game) savedInstanceState.getSerializable("Game");
+            ImageButton button;
+            int idIB = 0;
+
+            for (int i = 0; i < game.BOARD_SIZE; i++){
+                for (int j = 0; j < game.BOARD_SIZE; j++) {
+                    if (game.board[j][i] == Tile.CROSS) {
+                        button = findViewById(id[idIB]);
+                        button.setBackgroundResource(R.drawable.cross);
+                    } else if (game.board[j][i] == Tile.CIRCLE) {
+                        button = findViewById(id[idIB]);
+                        button.setBackgroundResource(R.drawable.circle);
+                    } else {
+                        button = findViewById(id[idIB]);
+                        button.setBackgroundResource(R.drawable.blank);
+                    }
+                    idIB++;
+                }
+            }
+        }
     }
 
-//    @Override
-//    public void onSaveInstanceState(Bundle outState) {
-//        super.onSaveInstanceState(outState); // always call super
-//        outState.putSerializable("Game", game);
-//    }
-//
-//    @Override
-//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-//        super.onRestoreInstanceState(savedInstanceState);
-//        game = (Game) savedInstanceState.getSerializable("game");
-
-//        for (int i = 0; i < game.BOARD_SIZE; i++) {
-//            for (int j = 0; j < game.BOARD_SIZE; j++) {
-//                if (game.board[i][j] == Tile.CROSS) {
-//                    ImageButton button = findViewById(id[i * j]);
-//                    button.setBackgroundResource(R.drawable.cross);
-//                } else if (game.board[i][j] == Tile.CIRCLE) {
-//                    ImageButton button = findViewById(id[i * j]);
-//                    button.setBackgroundResource(R.drawable.circle);
-//                } else {
-//                    ImageButton button = findViewById(id[i * j]);
-//                    button.setBackgroundResource(R.drawable.border);
-//                }
-//            }
-//        }
-//    }
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState); // always call super
+        outState.putSerializable("Game", game);
+    }
 
     /**
      * This function changes UI when a user clicks on one of the buttons. If one of the players
@@ -130,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
     public void resetClicked (View view){
 
         game = new Game();
-
         gameOver = false;
 
         for (int i = 0; i < 9; i++) {

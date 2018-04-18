@@ -1,9 +1,8 @@
 package example.promo.tictactoe;
 
 import java.io.Serializable;
-// implements Serializable
 
-public class Game {
+public class Game implements Serializable {
 
     final public int BOARD_SIZE = 3;
     public Tile[][] board;
