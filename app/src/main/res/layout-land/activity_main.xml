@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
     <android.support.v7.widget.GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="363dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1">
 
@@ -20,8 +20,8 @@
             android:background="@drawable/border"
             android:onClick="tileClicked"
             android:text=""
-            app:layout_row="0"
-            app:layout_column="0" />
+            app:layout_column="0"
+            app:layout_row="0" />
 
         <ImageButton
             android:id="@+id/imageButton2"
@@ -30,8 +30,8 @@
             android:background="@drawable/border"
             android:onClick="tileClicked"
             android:text=""
-            app:layout_row="1"
-            app:layout_column="0" />
+            app:layout_column="0"
+            app:layout_row="1" />
 
         <ImageButton
             android:id="@+id/imageButton3"
@@ -40,8 +40,8 @@
             android:background="@drawable/border"
             android:onClick="tileClicked"
             android:text=""
-            app:layout_row="2"
-            app:layout_column="0" />
+            app:layout_column="0"
+            app:layout_row="2" />
 
         <ImageButton
             android:id="@+id/imageButton4"
@@ -50,8 +50,8 @@
             android:background="@drawable/border"
             android:onClick="tileClicked"
             android:text=""
-            app:layout_row="0"
-            app:layout_column="1" />
+            app:layout_column="1"
+            app:layout_row="0" />
 
         <ImageButton
             android:id="@+id/imageButton5"
@@ -60,8 +60,8 @@
             android:background="@drawable/border"
             android:onClick="tileClicked"
             android:text=""
-            app:layout_row="1"
-            app:layout_column="1" />
+            app:layout_column="1"
+            app:layout_row="1" />
 
         <ImageButton
             android:id="@+id/imageButton6"
@@ -70,8 +70,8 @@
             android:background="@drawable/border"
             android:onClick="tileClicked"
             android:text=""
-            app:layout_row="2"
-            app:layout_column="1" />
+            app:layout_column="2"
+            app:layout_row="0" />
 
         <ImageButton
             android:id="@+id/imageButton7"
@@ -80,8 +80,8 @@
             android:background="@drawable/border"
             android:onClick="tileClicked"
             android:text=""
-            app:layout_row="0"
-            app:layout_column="2" />
+            app:layout_column="2"
+            app:layout_row="1" />
 
         <ImageButton
             android:id="@+id/imageButton8"
@@ -90,8 +90,8 @@
             android:background="@drawable/border"
             android:onClick="tileClicked"
             android:text=""
-            app:layout_row="1"
-            app:layout_column="2" />
+            app:layout_column="1"
+            app:layout_row="2" />
 
         <ImageButton
             android:id="@+id/imageButton9"
@@ -105,23 +105,29 @@
 
     </android.support.v7.widget.GridLayout>
 
-    <TextView
-        android:id="@+id/textView2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        android:gravity="center"
-        android:text="Welcome!"
-        android:textColor="#000000"
-        android:textSize="@android:dimen/app_icon_size" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:onClick="resetClicked"
-        android:text="Reset game" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="281dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Welcome!"
+            android:textColor="#000000"
+            android:textSize="@android:dimen/app_icon_size" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:onClick="resetClicked"
+            android:text="Reset game" />
+    </LinearLayout>
 
 </LinearLayout>
