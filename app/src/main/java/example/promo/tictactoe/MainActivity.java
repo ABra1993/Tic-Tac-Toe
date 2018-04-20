@@ -116,14 +116,6 @@ public class MainActivity extends AppCompatActivity {
             TextView textView = findViewById(R.id.textView2);
             textView.setText("");
 
-            // if users have not entered names, 'set' button and textedit are made invisible
-            if ( player1 == "") {
-                Button button = findViewById(R.id.button);
-                EditText editText = findViewById(R.id.editText);
-                button.setVisibility(View.INVISIBLE);
-                editText.setVisibility(View.INVISIBLE);
-            }
-
             // determines row and column of checked box
             int id = view.getId();
             int row;
