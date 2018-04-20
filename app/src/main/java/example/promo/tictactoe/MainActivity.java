@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
             // retrieves and shows player's names
             playersCount = savedInstanceState.getInt("PlayersCount");
+            String message = savedInstanceState.getString("Message");
+            TextView textView = findViewById(R.id.textView2);
+            textView.setText(message);
 
             if (playersCount == 1) {
                 TextView textPlayer1 = findViewById(R.id.textView3);
@@ -98,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
         outState.putString("Player 1", player1);
         outState.putString("Player 2", player2);
         outState.putInt("PlayersCount", playersCount);
+        TextView textView = findViewById(R.id.textView2);
+        outState.putString("Message", textView.getText().toString());
     }
 
     /**
@@ -235,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
         textPlayer2.setText(player2);
         editText.setVisibility(View.INVISIBLE);
         button.setVisibility(View.INVISIBLE);
-        textView.setText("Let's start!");
+        textView.setText("");
     }
 
     editText.setText("");
