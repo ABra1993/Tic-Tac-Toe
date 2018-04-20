@@ -173,18 +173,25 @@ public class MainActivity extends AppCompatActivity {
                 case CIRCLE:
                     button.setBackgroundResource(R.drawable.circle);
                     break;
-                case INVALID:
-                    textView.setText("This box is already filled!");
-                    break;
             }
 
             // returns statement if one of the player's has won the game
             if (gamestate == GameState.PLAYER_ONE) {
-                textView.setText(player1 + " wins!");
-                gameOver = true;
+                if (playersCount == 2) {
+                    textView.setText(player1 + " wins!");
+                    gameOver = true;
+                } else {
+                    textView.setText("Game won!");
+                    gameOver = true;
+                }
             } else if (gamestate == GameState.PLAYER_TWO) {
-                textView.setText(player2 + " wins!");
-                gameOver = true;
+                if (playersCount == 2) {
+                    textView.setText(player2 + " wins!");
+                    gameOver = true;
+                } else {
+                    textView.setText("Game won!");
+                    gameOver = true;
+                }
             }
         }
     }
