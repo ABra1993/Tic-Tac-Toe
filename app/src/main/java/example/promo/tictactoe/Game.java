@@ -7,7 +7,7 @@ public class Game implements Serializable {
     final public int BOARD_SIZE = 3;
     public Tile[][] board;
     private Boolean playerOneTurn;  // true if player 1's turn, false if player 2's turn
-    private int[] loc = new int[] {2, 0, 1, 1, 0, 2};
+    private int[] loc = new int[]{2, 0, 1, 1, 0, 2};
 
     // initializes empty board
     public Game() {
@@ -78,9 +78,9 @@ public class Game implements Serializable {
             }
         }
 
-        // returns whether a player has won
+        // returns state of game
         if (countColumn == 3 || countRow == 3 || diagonal1 == 3 || diagonal2 == 3) {
-            if (tile == Tile.CROSS){
+            if (tile == Tile.CROSS) {
                 return GameState.PLAYER_ONE;
             } else {
                 return GameState.PLAYER_TWO;
@@ -90,3 +90,6 @@ public class Game implements Serializable {
         }
     }
 }
+
+
+
